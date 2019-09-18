@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="card-header">
+      <ul class="nav nav-pills card-header-pills">
+        <li class="nav-item">
+          <a class="nav-link" href="#">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">/</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Sinh viên </a>
+        </li>
+      </ul>
+    </div>
+  
+    <div class="card" style="margin-top: 30px">
+      <div class="card-header">
+        <i class='fas fa-table' style='font-size:20px'> Danh sách sinh viên</i>
+      </div>
+    <div class="card-body">
+        <p><strong>First Name: </strong>{{ item.firstName }}</p>
+        <p><strong>Last Name: </strong> {{ item.lastName }}</p>
+        <p><strong>Enroll Date: </strong>{{ item.enrollmentDate }}</p>
+        <table class="table table-bordered">
+            <thead>
+                <th>Course Title</th>
+                <th>Grade</th>
+                <th>Credits</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let enrollment of enrollments">
+                    <td>{{ courses[enrollment.courseId].title }}</td>
+                    <td>{{ enrollment.grade.charCodeAt(0) }} {{ enrollment.grade }}</td>
+                    <td>{{ courses[enrollment.courseId].credits }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div> 
+</div>
